@@ -1,2 +1,2 @@
 # Sinatra_API
-A Sample of Sinatra API consumer
+A basic API consumer for testing Fyber Offers API.
