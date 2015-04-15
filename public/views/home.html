@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Offers Search
+            </div>
+            <div class="panel-body">
+                <form class="simple_form form-inline" id="new_user_inline" novalidate="novalidate">
+                    <div class="form-group required ">
+                        <label class="required" >
+                          <abbr title="required">*</abbr> Uid</label>
+                          <input class="string required form-control" id="uid" name="uid" ng-model="offerQuery.uid">
+                    </div>
+                    <div class="form-group required ">
+                        <label class="required" >
+                          <abbr title="required">*</abbr> Pub0</label>
+                          <input class="string required form-control" id="pub0" name="pub0" ng-model="offerQuery.pub0">
+                    </div>
+                    <div class="form-group required ">
+                        <label class="required" >
+                          <abbr title="required">*</abbr> page</label>
+                          <input class="string required form-control" id="page" name="page" ng-model="offerQuery.page">
+                    </div>
+                    <div class="form-group required text-right">
+                      <input class="btn btn-default" name="commit" type="submit" value="Search" ng-click="searchOffers()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+  <div class="col-md-1">&nbsp;</div>
+  <div class="col-md-9" >
+
+    <div class="offer col-md-4" ng-repeat="iOffer in offers">
+      <a href="{{ iOffer.link }}" class="btn btn-default ">
+        <span>{{ iOffer.title }}</span>
+        <img ng-src="{{ iOffer.thumbnail.hires }}" width='175' />
+      </a>
+    </div>
+
+  </div>
+</div>

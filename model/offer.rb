@@ -35,7 +35,7 @@ class Offer < ActiveResource::Base
   def self.search()
     begin
       Offer.all( params: Offer.params )
-    rescue ActiveResource::BadRequest => e
+    rescue Exception => e
       JSON.parse(Offer.connection.http_response.body).select{|key,value| ["code", "message"].include?(key) }
     end
   end
