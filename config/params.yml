@@ -1,0 +1,11 @@
+development:
+  appid: 157
+  locale: "de"
+
+test:
+  appid: 158
+  locale: "ru"
+
+production:
+  appid: 157
+  locale: "de"
