@@ -8,6 +8,8 @@ GEM
       activemodel (~> 4.0)
       activesupport (~> 4.0)
       rails-observers (~> 0.1.1)
+    activeresource-response (1.1.1)
+      activeresource (>= 3, < 5)
     activesupport (4.1.4)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -92,6 +94,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource
+  activeresource-response
   capybara
   pry
   pry-doc

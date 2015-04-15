@@ -1,11 +1,14 @@
 development:
   appid: 157
   locale: "de"
+  api_key: "b07a12df7d52e6c118e5d47d3f9e60135b109a1f"
 
 test:
-  appid: 158
+  appid: 157
   locale: "ru"
+  api_key: "b07a12df7d52e6c118e5d47d3f9e60135b109a1f"
 
 production:
   appid: 157
   locale: "de"
+  api_key: "b07a12df7d52e6c118e5d47d3f9e60135b109a1f"

@@ -2,14 +2,15 @@ require 'digest/sha1'
 
 
 class Offer < ActiveResource::Base
+  add_response_method :http_response
   self.site = "http://api.sponsorpay.com/feed/v1"
   @@params = {
-      format: "json",
-      locale: "de",
-      offer_types: 112,
-      timestamp: Time.now.to_time.to_i,
-      apple_idfa:"",
-      apple_idfa_tracking_enabled: true
+      "format" => "json",
+      "locale" => "de",
+      "offer_types" => 112,
+      "timestamp" => Time.now.to_time.to_i,
+      "apple_idfa" =>"",
+      "apple_idfa_tracking_enabled" => true
     }
   @@api_key = ""
 
@@ -28,6 +29,15 @@ class Offer < ActiveResource::Base
 
   def self.calculate_hash_key()
     Digest::SHA1.hexdigest calculate_hash_query()
+  end
+
+
+  def self.search()
+    begin
+      Offer.all( params: Offer.params )
+    rescue ActiveResource::BadRequest => e
+      JSON.parse(Offer.connection.http_response.body).select{|key,value| ["code", "message"].include?(key) }
+    end
   end
 
 end

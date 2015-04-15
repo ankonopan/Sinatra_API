@@ -7,6 +7,7 @@ gem 'unicorn'
 gem 'pry'
 gem 'pry-doc'
 gem 'activeresource'
+gem 'activeresource-response'
 
 
 group :test do
