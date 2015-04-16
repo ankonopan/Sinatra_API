@@ -1,6 +1,9 @@
 require 'digest/sha1'
 
 
+# Using ActiveResource for querying the API
+# There is no particular intention on this decicion but to have a proper offer class with more functionalities
+
 class Offer < ActiveResource::Base
   add_response_method :http_response
   self.site = "http://api.sponsorpay.com/feed/v1"
