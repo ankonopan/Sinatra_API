@@ -14,7 +14,7 @@ Use Shotgun server to handle the application.
 Test are written in Rspec. It include a Model test of the Offer Resource and a basic Http test against the API.
 
 > rake
-or
+
 > rspec spec/integration/api_test.rb
 
 ## Working app
