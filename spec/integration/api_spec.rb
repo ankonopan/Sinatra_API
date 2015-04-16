@@ -49,10 +49,11 @@ describe "Frontend" do
 end
 
 describe 'API response' do
-  it "should return a list of ads" do # the first test
+  it "should search for offers" do # the first test
     expect(Offer).to receive(:config_params)
     expect(Offer).to receive(:search)
-    post '/offers' , "uid" => 23, "pub0" => 24, "page" => 25
+    post '/offers' , {"uid" => 23, "pub0" => 24, "page" => 25}.to_json, { accept: "application/json, text/plain, */*
+", "Content-Type" => "application/json;charset=UTF-8" }
   end
 end
 
