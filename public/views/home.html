@@ -8,6 +8,7 @@
                 Offers Search
             </div>
             <div class="panel-body">
+                <div class="bg-danger text-center" style="padding:5px; margin-bottom:15px;" ng-show="errorFields">All fields are mandatory *</div>
                 <form class="simple_form form-inline" id="new_user_inline" novalidate="novalidate">
                     <div class="form-group required ">
                         <label class="required" >
@@ -36,6 +37,8 @@
 
   <div class="col-md-1">&nbsp;</div>
   <div class="col-md-9" >
+    <div class="loader text-center" ng-show="processingOffers"> <img src="/loader.gif"> </div>
+    <div class="bg-danger text-center" style="padding:5px; margin-bottom:15px;" ng-show="emptyOffers">No offers available</div>
 
     <div class="offer col-md-4" ng-repeat="iOffer in offers">
       <a href="{{ iOffer.link }}" class="btn btn-default ">
